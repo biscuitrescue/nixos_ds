@@ -1,0 +1,90 @@
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    brave
+    sunshine
+    hyprsunset
+    zig
+    fastfetch
+    fzf
+    vlc
+    fd
+    btop
+    pavucontrol
+    hypridle
+    spotify-player
+    zathura
+    qbittorrent
+    playerctl
+    easyeffects
+    onlyoffice-desktopeditors
+    htop
+    feh
+    cmatrix
+    cava
+    pipes-rs
+    grim
+    wl-clipboard
+    nautilus
+    mpv
+    lazygit
+    swaylock-effects
+    swayidle
+    networkmanagerapplet
+    bat
+    eza
+    git
+    kitty
+    slurp
+    rofi
+    light
+    alsa-utils
+    pamixer
+    # icu
+    mako
+    polkit_gnome
+    xdotool
+    wmctrl
+    waybar
+    neofetch
+    starship
+    tmux
+    libnotify
+    yazi
+    chafa
+    ueberzugpp
+    any-nix-shell
+    hpx
+    ripgrep
+    gh
+    luajit
+    tree-sitter
+    nodejs-slim
+    gopls
+    nil
+    python313Packages.python-lsp-server
+    rust-analyzer
+    lua-language-server
+    neovim
+    deno
+    stylua
+    eslint
+    black
+    libtool
+    sqlite
+    ispell
+    zed-editor
+    nixfmt
+    xorg.xwininfo
+    # vivaldi
+    # vivaldi-ffmpeg-codecs
+  ];
+  programs = {
+    home-manager.enable = true;
+  };
+}
