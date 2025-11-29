@@ -116,15 +116,15 @@
 
       workspace = [
         "1, monitor:eDP-1"
-          "2, monitor:eDP-2"
+          "2, monitor:eDP-1"
           "3, monitor:eDP-1"
-          "4, monitor:eDP-2"
+          "4, monitor:eDP-1"
           "5, monitor:eDP-1"
 
           "6, monitor:eDP-2"
-          "7, monitor:eDP-1"
+          "7, monitor:eDP-2"
           "8, monitor:eDP-2"
-          "9, monitor:eDP-1"
+          "9, monitor:eDP-2"
           "10, monitor:eDP-2"
       ];
 
@@ -195,18 +195,48 @@
         "$mod,P,togglespecialworkspace,term"
         "$mod,W,fullscreen,"
       ]
-      ++ (builtins.concatLists (
-        builtins.genList (
-          i:
-          let
-            ws = i + 1;
-          in
-          [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ]
-        ) 10
-      ));
+      # ++ (builtins.concatLists (
+      #   builtins.genList (
+      #     i:
+      #     let
+      #       ws = i + 1;
+      #     in
+      #     [
+      #       "$mod, code:1${toString i}, workspace, ${toString ws}"
+      #       "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+      #     ]
+      #   ) 10
+      # ));
+
+      ++ (
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+              keycode = 10 + i;
+            in [
+              "$mod, code:${toString keycode}, workspace, ${toString ws}"
+              "$mod SHIFT, code:${toString keycode}, movetoworkspace, ${toString ws}"
+            ]
+          ) 5
+        )
+      )
+      ++ (
+        # Workspaces 6–10: $mod + CTRL
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 6; # 6..10
+              keycode = 10 + i; # same keys 1..5
+            in [
+              "$mod CTRL, code:${toString keycode}, workspace, ${toString ws}"
+              "$mod CTRL SHIFT, code:${toString keycode}, movetoworkspace, ${toString ws}"
+            ]
+          ) 5
+        )
+      );
     };
   };
 }
