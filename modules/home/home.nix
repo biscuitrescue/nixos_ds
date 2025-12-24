@@ -86,6 +86,14 @@
     package = pkgs.oreo-cursors-plus;
     name = "oreo_purple_cursors";
     size = 16;
+    x11 = {
+      enable = true; 
+      defaultCursor = "oreo_purple_cursors";
+    };
+    hyprcursor = {
+      enable = true;
+      size = 16;
+    };
   };
 
   gtk = {

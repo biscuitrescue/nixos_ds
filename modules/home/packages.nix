@@ -9,7 +9,6 @@
     brave
     sunshine
     hyprsunset
-    zig
     fastfetch
     fzf
     vlc
@@ -45,7 +44,6 @@
     light
     alsa-utils
     pamixer
-    # icu
     mako
     polkit_gnome
     xdotool
@@ -68,7 +66,6 @@
     gopls
     nil
     python313Packages.python-lsp-server
-    rust-analyzer
     lua-language-server
     neovim
     deno
@@ -81,8 +78,6 @@
     zed-editor
     nixfmt
     xorg.xwininfo
-    # vivaldi
-    # vivaldi-ffmpeg-codecs
   ];
   programs = {
     home-manager.enable = true;

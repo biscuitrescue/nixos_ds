@@ -7,9 +7,9 @@
   wayland.windowManager.hyprland = {
     systemd.variables = [ "--all" ];
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # portalPackage =
+      # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
     extraConfig = ''
 
@@ -27,7 +27,7 @@
           animation=fade,1,10,default
           animation=workspaces,1,6,default,slide
           animation=specialWorkspace,1,4,overshot,slidevert
-          enabled=0
+          enabled=1
       }
     '';
 

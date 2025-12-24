@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+
 
   nixpkgs.overlays = [
     (final: prev: {
@@ -7,22 +8,21 @@
   ];
   environment.systemPackages = with pkgs; [
     cloudflare-warp
+    vivaldi
+    vivaldi-ffmpeg-codecs
     openvpn
-    direnv
-    nix-direnv
     tailscale
     spotify
+    openssl
+    pkg-config
     vim
+    solc
+    gcc
     clang
     discord
     cmake
     obsidian
-    llvmPackages_21.clang-tools
-    libllvm
-    triton-llvm
     nmap
-    libgccjit
-    gcc
     wget
     unzip
     zip
@@ -32,11 +32,9 @@
     tcpdump
     exfat
     exfatprogs
-    gnumake
     killall
     pulseaudio
     ntfs3g
-    python314
   ];
 
   programs = {
