@@ -1,21 +1,26 @@
+{ ... }:
+
 {
-  ...
-}: {
   services.hyprpaper = {
     enable = true;
+
     settings = {
       ipc = "on";
-      splash = false;
-      splash_offset = 2.0;
-
-      preload =
-        [ "/home/cafo/git/wallpapers/basement.jpg" ];
-
-
-      wallpaper = [
-        "eDP-1, /home/cafo/git/wallpapers/basement.jpg"
-        "eDP-2, /home/cafo/git/wallpapers/basement.jpg"
-      ]; 
+      preload = [
+        "/home/cafo/git/wallpapers/chaos_rose.png"
+      ];
     };
+
+    extraConfig = ''
+      wallpaper {
+        monitor = eDP-1
+        path = /home/cafo/git/wallpapers/chaos_rose.png
+      }
+
+      wallpaper {
+        monitor = eDP-2
+        path = /home/cafo/git/wallpapers/chaos_rose.png
+      }
+    '';
   };
 }

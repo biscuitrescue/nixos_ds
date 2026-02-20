@@ -5,10 +5,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./packages.nix
-      ./hypr.nix
-      ./hypridle.nix
-      ./hyprpaper.nix
-      ./mako.nix
+      # ./hypr.nix
+      # ./hypridle.nix
+      # ./hyprpaper.nix
+      # ./mako.nix
     ];
 
   home.username = "cafo";
@@ -87,7 +87,7 @@
     name = "oreo_purple_cursors";
     size = 16;
     x11 = {
-      enable = true; 
+      enable = true;
       defaultCursor = "oreo_purple_cursors";
     };
     hyprcursor = {

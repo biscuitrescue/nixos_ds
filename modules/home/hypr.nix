@@ -13,7 +13,8 @@
     xwayland.enable = true;
     extraConfig = ''
 
-      #layerrule = blur, waybar
+      # layerrule = blur on, match:namespace waybar
+      layerryle = blur, waybar
 
       # windowrule=float,class:org.gnome.Nautilus
       # windowrule=size 1119 621,class:org.gnome.Nautilus
@@ -40,6 +41,7 @@
         "nm-applet"
         "cppswap"
         "swayidle -w timeout 900 'wayblur' before-sleep 'wayblur'"
+        "hyprpaper"
       ];
       decoration = {
         rounding = "4";
@@ -84,11 +86,6 @@
         direct_scanout = 1;
         cm_fs_passthrough = 1;
       };
-
-      experimental = {
-        xx_color_management_v4 = true;
-      };
-
 
       general = {
         gaps_in = 3;

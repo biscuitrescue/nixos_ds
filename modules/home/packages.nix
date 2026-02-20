@@ -7,8 +7,6 @@
 {
   home.packages = with pkgs; [
     brave
-    sunshine
-    hyprsunset
     fastfetch
     fzf
     vlc
@@ -77,7 +75,8 @@
     ispell
     zed-editor
     nixfmt
-    xorg.xwininfo
+    xwininfo
+    i3lock-fancy-rapid
   ];
   programs = {
     home-manager.enable = true;

@@ -8,25 +8,19 @@
   ];
   environment.systemPackages = with pkgs; [
     cloudflare-warp
-    vivaldi
-    vivaldi-ffmpeg-codecs
     openvpn
     tailscale
     spotify
     openssl
     pkg-config
     vim
-    solc
     gcc
-    clang
     discord
-    cmake
     obsidian
     nmap
     wget
     unzip
     zip
-    glib
     baobab
     bleachbit
     tcpdump
@@ -40,21 +34,17 @@
   programs = {
     command-not-found.enable = true;
 
-    uwsm = {
-      enable = true;
-      waylandCompositors = {
-        hyprland = {
-          prettyName = "Hyprland";
-          comment = "Hyprland compositor managed by UWSM";
-          binPath = "/run/current-system/sw/bin/Hyprland";
-        };
-      };
-    };
+    # uwsm = {
+    #   enable = true;
+    #   waylandCompositors = {
+    #     hyprland = {
+    #       prettyName = "Hyprland";
+    #       comment = "Hyprland compositor managed by UWSM";
+    #       binPath = "/run/current-system/sw/bin/Hyprland";
+    #     };
+    #   };
+    # };
 
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
 
     zsh.enable = true;
     fish.enable = true;
@@ -67,4 +57,4 @@
       enableSSHSupport = true;
     };
   };
- } 
+ }
