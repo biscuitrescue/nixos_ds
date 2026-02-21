@@ -1,60 +1,63 @@
 { pkgs, inputs, ... }: {
 
 
-  nixpkgs.overlays = [
-    (final: prev: {
-     jdk8 = final.openjdk8-bootstrap;
-     })
-  ];
-  environment.systemPackages = with pkgs; [
-    cloudflare-warp
-    openvpn
-    tailscale
-    spotify
-    openssl
-    pkg-config
-    vim
-    gcc
-    discord
-    obsidian
-    nmap
-    wget
-    unzip
-    zip
-    baobab
-    bleachbit
-    tcpdump
-    exfat
-    exfatprogs
-    killall
-    pulseaudio
-    ntfs3g
-  ];
+    nixpkgs.overlays = [
+        (final: prev: {
+         jdk8 = final.openjdk8-bootstrap;
+         })
+    ];
+    environment.systemPackages = with pkgs; [
+        dnsmasq
+        qemu
+        cloudflare-warp
+        openvpn
+        tailscale
+        spotify
+        openssl
+        pkg-config
+        vim
+        gcc
+        discord
+        obsidian
+        nmap
+        wget
+        unzip
+        zip
+        baobab
+        bleachbit
+        tcpdump
+        exfat
+        exfatprogs
+        killall
+        pulseaudio
+        ntfs3g
+        ];
 
-  programs = {
-    command-not-found.enable = true;
+    programs = {
+        command-not-found.enable = true;
 
-    # uwsm = {
-    #   enable = true;
-    #   waylandCompositors = {
-    #     hyprland = {
-    #       prettyName = "Hyprland";
-    #       comment = "Hyprland compositor managed by UWSM";
-    #       binPath = "/run/current-system/sw/bin/Hyprland";
-    #     };
-    #   };
-    # };
+# uwsm = {
+#   enable = true;
+#   waylandCompositors = {
+#     hyprland = {
+#       prettyName = "Hyprland";
+#       comment = "Hyprland compositor managed by UWSM";
+#       binPath = "/run/current-system/sw/bin/Hyprland";
+#     };
+#   };
+# };
 
 
-    zsh.enable = true;
-    fish.enable = true;
-    firefox.enable = true;
-    nix-ld.enable = true;
-    virt-manager.enable = true;
+        zsh.enable = true;
+        fish.enable = true;
+        firefox.enable = true;
+        nix-ld.enable = true;
+        virt-manager.enable = true;
 
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
+        gnupg.agent = {
+            enable = true;
+            enableSSHSupport = true;
+        };
     };
-  };
- }
+    virtualisation.libvirtd.enable = true;
+                       }
