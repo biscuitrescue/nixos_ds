@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   services = {
-    logind.lidSwitchExternalPower = "ignore";
+    logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
     gvfs.enable = true;
     # samba.enable = true;
     dbus.enable = true;
