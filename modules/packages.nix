@@ -17,6 +17,7 @@
         pkg-config
         vim
         gcc
+        gnumake
         discord
         obsidian
         nmap
