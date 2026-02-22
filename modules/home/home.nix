@@ -3,12 +3,8 @@
 {
 
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./packages.nix
-      # ./hypr.nix
-      # ./hypridle.nix
-      # ./hyprpaper.nix
-      # ./mako.nix
     ];
 
   home.username = "cafo";
@@ -85,15 +81,20 @@
     gtk.enable = true;
     package = pkgs.oreo-cursors-plus;
     name = "oreo_purple_cursors";
-    size = 16;
+    size = 24;
     x11 = {
       enable = true;
       defaultCursor = "oreo_purple_cursors";
     };
-    hyprcursor = {
-      enable = true;
-      size = 16;
-    };
+  };
+  xresources.properties = {
+      "Xft.antialias" = true;
+      "Xft.hinting" = true;
+      "Xft.rgba" = "rgb";
+      "Xft.autohint" = true;
+      "Xft.hintstyle" = "hintfull";
+      "Xft.lcdfilter" = "lcddefault"; # NOT "lcdfilter"
+          "Xft.dpi" = 100;
   };
 
   gtk = {

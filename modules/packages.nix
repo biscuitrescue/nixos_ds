@@ -1,6 +1,4 @@
-{ pkgs, inputs, ... }: {
-
-
+{ pkgs, ... }: {
     nixpkgs.overlays = [
         (final: prev: {
          jdk8 = final.openjdk8-bootstrap;
@@ -18,6 +16,7 @@
         vim
         gcc
         gnumake
+        bmake
         discord
         obsidian
         nmap

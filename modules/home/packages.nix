@@ -1,12 +1,11 @@
 {
   pkgs,
-  inputs,
-  system,
   ...
 }:
 {
   home.packages = with pkgs; [
     signal-desktop-bin
+    hyfetch
     brave
     fastfetch
     fzf
@@ -77,7 +76,12 @@
     zed-editor
     nixfmt
     xwininfo
-    i3lock-fancy-rapid
+    i3lock-fancy
+    xclip
+    zoxide
+    dunst
+    picom
+    maim
   ];
   programs = {
     home-manager.enable = true;

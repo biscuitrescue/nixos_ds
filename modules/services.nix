@@ -5,10 +5,10 @@
     # samba.enable = true;
     dbus.enable = true;
 
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
+    # emacs = {
+    #   enable = true;
+    #   package = pkgs.emacs;
+    # };
     blueman.enable = true;
     xserver = {
       enable = true;
