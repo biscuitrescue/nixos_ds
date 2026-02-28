@@ -1,4 +1,15 @@
 { pkgs, ... }: {
+  systemd.services.turn-on-speakers = {
+    description = "turn on using i2c";
+    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target" ];
+    serviceConfig = {
+        User = "root";
+        Type = "oneshot";
+        ExecStart = "${pkgs.bash}/bin/bash -c \"${./2pa-byps.sh} | ${pkgs.util-linux}/bin/logger\"";
+    };
+    wantedBy = [ "multi-user.target" "sleep.target" ];
+  };
+
   services = {
     logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
     gvfs.enable = true;

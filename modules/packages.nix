@@ -5,6 +5,9 @@
          })
     ];
     environment.systemPackages = with pkgs; [
+        util-linux
+        kmod
+        i2c-tools
         dnsmasq
         qemu
         cloudflare-warp

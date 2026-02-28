@@ -2,123 +2,123 @@
 
 {
 
-  imports =
-    [
-      ./packages.nix
-    ];
+    imports =
+        [
+        ./packages.nix
+        ];
 
-  home.username = "cafo";
-  home.homeDirectory = "/home/cafo";
+    home.username = "cafo";
+    home.homeDirectory = "/home/cafo";
 
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+    home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  home.file = {
-    "scripts/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/scripts";
-      recursive = true;
-    };
-    ".config/nvim/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/nvim";
-      recursive = true;
-    };
-    ".local/share/fonts" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/fonts";
-      recursive = true;
-    };
-    ".config/ranger" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/ranger";
-      recursive = true;
-    };
-    ".config/zathura" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/zathura";
-      recursive = true;
-    };
-    ".config/dunst" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/dunst";
-      recursive = true;
-    };
-    ".config/kitty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/kitty";
-      recursive = true;
-    };
-    ".config/alacritty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/alacritty";
-      recursive = true;
-    };
-    ".config/rofi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/rofi";
-      recursive = true;
-    };
-    ".zshrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/.zshrc";
-    };
-    ".config/fish" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/fish";
-      recursive = true;
-    };
-    ".config/waybar" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/waybar";
-      recursive = true;
-    };
-    ".config/easyeffects" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/easyeffects";
-      recursive = true;
-    };
-    ".config/starship.toml" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/starship.toml";
-    };
-    ".config/qtile" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/qtile";
-      recursive = true;
-    };
-  };
+        home.file = {
+            "scripts/" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/scripts";
+                recursive = true;
+            };
+            ".config/nvim/" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/nvim";
+                recursive = true;
+            };
+            ".local/share/fonts" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/fonts";
+                recursive = true;
+            };
+            ".config/ranger" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/ranger";
+                recursive = true;
+            };
+            ".config/zathura" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/zathura";
+                recursive = true;
+            };
+            ".config/dunst" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/dunst";
+                recursive = true;
+            };
+            ".config/kitty" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/kitty";
+                recursive = true;
+            };
+            ".config/alacritty" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/alacritty";
+                recursive = true;
+            };
+            ".config/rofi" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/rofi";
+                recursive = true;
+            };
+            ".zshrc" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/.zshrc";
+            };
+            ".config/fish" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/fish";
+                recursive = true;
+            };
+            ".config/waybar" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/waybar";
+                recursive = true;
+            };
+            ".config/easyeffects" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/easyeffects";
+                recursive = true;
+            };
+            ".config/starship.toml" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/starship.toml";
+            };
+            ".config/qtile" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/home/cafo/git/dotfiles/config/qtile";
+                recursive = true;
+            };
+        };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.oreo-cursors-plus;
-    name = "oreo_purple_cursors";
-    size = 24;
-    x11 = {
-      enable = true;
-      defaultCursor = "oreo_purple_cursors";
+    home.sessionVariables = {
+        EDITOR = "nvim";
     };
-  };
-  xresources.properties = {
-      "Xft.antialias" = true;
-      "Xft.hinting" = true;
-      "Xft.rgba" = "rgb";
-      "Xft.autohint" = true;
-      "Xft.hintstyle" = "hintfull";
-      "Xft.lcdfilter" = "lcddefault"; # NOT "lcdfilter"
-          "Xft.dpi" = 100;
-  };
 
-  gtk = {
-    enable = true;
-    font = {
-      name = "Zed Sans";
-      size = 10;
+    home.pointerCursor = {
+        gtk.enable = true;
+        package = pkgs.oreo-cursors-plus;
+        name = "oreo_purple_cursors";
+        size = 24;
+        x11 = {
+            enable = true;
+            defaultCursor = "oreo_purple_cursors";
+        };
     };
-    theme = {
-      package = pkgs.colloid-gtk-theme;
-      name = "Colloid-Dark";
+    xresources.properties = {
+        "Xft.antialias" = true;
+        "Xft.hinting" = true;
+        "Xft.rgba" = "rgb";
+        "Xft.autohint" = true;
+        "Xft.hintstyle" = "hintfull";
+        "Xft.lcdfilter" = "lcddefault";
+        "Xft.dpi" = 100;
     };
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
-  };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
-  };
+    gtk = {
+        enable = true;
+        font = {
+            name = "Zed Sans";
+            size = 10;
+        };
+        theme = {
+            package = pkgs.colloid-gtk-theme;
+            name = "Colloid-Dark";
+        };
+        iconTheme = {
+            package = pkgs.papirus-icon-theme;
+            name = "Papirus-Dark";
+        };
+    };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+    qt = {
+        enable = true;
+        platformTheme.name = "kvantum";
+        style.name = "kvantum";
+    };
+
+# Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
 }

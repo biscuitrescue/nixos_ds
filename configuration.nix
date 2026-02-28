@@ -17,8 +17,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-# boot.kernelPackages = pkgs.linuxPackages_6_17;
     boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelModules = [ "i2c-dev" ];
 
     networking.hostName = "nixos"; # Define your hostname.
         networking.networkmanager.enable = true;
